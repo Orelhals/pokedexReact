@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { searchPokemon } from "../api";
+
 
 const ButtonStyle = styled.button`
     border: none;
@@ -33,7 +35,8 @@ const SearchStyle = styled.div`
 
 export const Searchbar = () => {
 
-    const [search, setSearch] = useState("dito")
+    const [search, setSearch] = useState("dito");
+    const [pokemon, setPokemon] = useState();
     
     const onChangeHandler = (e) => {
         console.log("pokemon:", e.target.value)
@@ -41,8 +44,14 @@ export const Searchbar = () => {
     }
 
     const onButtonSearch = () => {
-        console.log("clicou", search)
+        onSearchHandler(search)
     }
+
+    const onSearchHandler = async (pokemon) => {
+        const result = await searchPokemon(pokemon)
+        setPokemon(result);
+    }
+
 return (
     <SearchStyle>
         <div className='input-search'>
@@ -50,8 +59,13 @@ return (
         </div>
         <div>
             <ButtonStyle onClick={onButtonSearch}>Buscar</ButtonStyle>
-            
         </div>
+        {pokemon? (
+            <div>
+                <div>Nome: {pokemon.name}</div>
+                <div>Peso: {pokemon.weight}</div>
+            </div>   
+        ) : null}
     </SearchStyle>
 )
 }

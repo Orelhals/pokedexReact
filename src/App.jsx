@@ -1,15 +1,15 @@
-import { Navbar } from './components/Navbar';
+import { Navbar } from "./components/Navbar";
 import "./App.css"
-import { Searchbar } from './components/Searchbar';
-
-
-
+import { Searchbar } from "./components/Searchbar";
 
 function App() {
+
+  
+
   return (
     <div>
       <Navbar />
-      <Searchbar />
+      <Searchbar/>
     </div>
   )
 }
