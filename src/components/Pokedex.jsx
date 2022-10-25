@@ -24,7 +24,7 @@ export const Pokedex = ({pokemons, loading}) => {
             {loading ? (
             <div>Carregando...</div>
             ) : (
-                <div className="pokedex-grid">
+                <div>
                     {pokemons && pokemons.map((pokemon, index) => {
                         return (
                             <Pokemon key={index} pokemon={pokemon}/>
