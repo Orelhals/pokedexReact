@@ -15,7 +15,6 @@ const PokedexStyle = styled.div`
 `;
 
 export const Pokedex = ({pokemons, loading}) => {
-    console.log(loading)
     return (
         <PokedexStyle>
             <div className="paginacao">
