@@ -35,7 +35,7 @@ const SearchStyle = styled.div`
 
 export const Searchbar = () => {
 
-    const [search, setSearch] = useState("dito");
+    const [search, setSearch] = useState("charmander");
     const [pokemon, setPokemon] = useState();
     
     const onChangeHandler = (e) => {
@@ -64,6 +64,7 @@ return (
             <div>
                 <div>Nome: {pokemon.name}</div>
                 <div>Peso: {pokemon.weight}</div>
+                <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             </div>   
         ) : null}
     </SearchStyle>
