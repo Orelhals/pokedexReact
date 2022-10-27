@@ -20,6 +20,7 @@ const SearchStyle = styled.div`
     margin: 0px auto;
     padding: 0 20px;
     align-items: center;
+    justify-content: center;
 
     > .input-search {
         margin-right: 20px;
@@ -39,7 +40,6 @@ export const Searchbar = () => {
     const [pokemon, setPokemon] = useState();
     
     const onChangeHandler = (e) => {
-        console.log("pokemon:", e.target.value)
         setSearch(e.target.value)
     }
 
@@ -54,12 +54,12 @@ export const Searchbar = () => {
 
 return (
     <SearchStyle>
-        <div className='input-search'>
-            <input type="text" placeholder='Buscar pokemon' onChange={onChangeHandler} />
-        </div>
-        <div>
-            <ButtonStyle onClick={onButtonSearch}>Buscar</ButtonStyle>
-        </div>
+            <div className='input-search'>
+                <input type="text" placeholder='Buscar pokemon' onChange={onChangeHandler} />
+            </div>
+            <div>
+                <ButtonStyle onClick={onButtonSearch}>Buscar</ButtonStyle>
+            </div>
         {pokemon? (
             <div>
                 <div>Nome: {pokemon.name}</div>

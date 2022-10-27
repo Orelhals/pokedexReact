@@ -10,7 +10,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
-  console.log(pokemons)
   const fetchPokemons = async () => {
     try {
       setLoading(true)

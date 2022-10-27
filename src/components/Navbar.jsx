@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import React from 'react';
 
 const NavStyles = styled.nav`
+
+    background-color: #e7cdde;
+    margin-bottom: 20px;
+
     img {
         width: 160px;
     }

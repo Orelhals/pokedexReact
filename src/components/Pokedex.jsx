@@ -12,6 +12,11 @@ const PokedexStyle = styled.div`
         flex-direction: row;
         padding: 10px;
     }
+
+    .pokemon-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `;
 
 export const Pokedex = ({pokemons, loading}) => {
@@ -24,7 +29,7 @@ export const Pokedex = ({pokemons, loading}) => {
             {loading ? (
             <div>Carregando...</div>
             ) : (
-                <div>
+                <div className="pokemon-grid">
                     {pokemons && pokemons.map((pokemon, index) => {
                         return (
                             <Pokemon key={index} pokemon={pokemon}/>
